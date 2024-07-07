@@ -290,3 +290,8 @@ app.get('/' , (req,res) => {
 app.listen(PORT, (req,res) => {
     console.log("started server")
 })
+
+app.delete('/deldellist', async (req , res)=> {
+    const datt = await delotMod.deleteMany()
+    res.send({datt: datt})
+})
