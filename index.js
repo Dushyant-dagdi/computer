@@ -291,6 +291,17 @@ app.listen(PORT, (req,res) => {
     console.log("started server")
 })
 
+app.put('/whyDel/:id', async (req , res)=> {
+    const id = req.params.id
+    fistMod.findByIdAndUpdate({_id:id} , {
+        Onam:req.body.e
+    })
+    .then(orders => res.json(orders))
+    .catch(err => res.json(err))
+
+    console.log(req.body.e)
+})
+
 app.delete('/deldellist', async (req , res)=> {
     const datt = await delotMod.deleteMany()
     res.send({datt: datt})
