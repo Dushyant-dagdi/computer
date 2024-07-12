@@ -298,8 +298,6 @@ app.put('/whyDel/:id', async (req , res)=> {
     })
     .then(orders => res.json(orders))
     .catch(err => res.json(err))
-
-    console.log(req.body.e)
 })
 
 app.delete('/deldellist', async (req , res)=> {
