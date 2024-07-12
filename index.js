@@ -300,6 +300,12 @@ app.put('/whyDel/:id', async (req , res)=> {
     .catch(err => res.json(err))
 })
 
+app.post('/ReqTable', (req , res)=> {
+    askbillpri.create(req.body)
+    .then(askpri => res.json(askpri))
+    .catch(err => res.json(err))
+})
+
 app.delete('/deldellist', async (req , res)=> {
     const datt = await delotMod.deleteMany()
     res.send({datt: datt})
