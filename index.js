@@ -301,7 +301,7 @@ app.put('/whyDel/:id', async (req , res)=> {
 })
 
 app.post('/ReqTable', (req , res)=> {
-    askbillpri.create(req.body)
+    askbillpris.create(req.body)
     .then(askpri => res.json(askpri))
     .catch(err => res.json(err))
 })
